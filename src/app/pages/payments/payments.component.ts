@@ -1,3 +1,4 @@
+import { PaymentsService } from './../../services/payments.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -5,11 +6,16 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './payments.component.html',
   styleUrls: ['./payments.component.css']
 })
-export class PaymentsComponent implements OnInit {
+export class PaymentsComponent {
 
-  constructor() { }
+  balance$ = this.paymentService.paymentBalance$;
 
-  ngOnInit(): void {
+  constructor(private paymentService: PaymentsService) {
+
+  }
+
+  updateBalance(balance: string) {
+    this.paymentService.updateBalance(+balance);
   }
 
 }

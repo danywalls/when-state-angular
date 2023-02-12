@@ -9,11 +9,10 @@ import { Component, inject, OnInit } from '@angular/core';
 export class ProfileComponent {
 
   name$ = this.profileService.name$;
+
   constructor(private profileService: ProfileService) {
 
   }
-
-
 
   save(name: string) {
     this.profileService.saveName(name);
