@@ -14,8 +14,8 @@ export class PaymentsComponent {
 
   }
 
-  updateBalance(balance: string) {
-    this.paymentService.updateBalance(+balance);
+  updateBalance(balance: HTMLInputElement) {
+    this.paymentService.addBalance(balance.valueAsNumber);
   }
 
 }

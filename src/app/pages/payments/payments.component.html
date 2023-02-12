@@ -1,5 +1,5 @@
 <h2>Add balance:</h2>
 <input #payment type="number">
-<button (click)="updateBalance(payment.value)">Update</button>
+<button (click)="updateBalance(payment)">Update</button>
 <span *ngIf="(balance$ | async ) as balance">You current Balance is: {{balance | currency}}</span>
 
