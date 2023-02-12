@@ -1,0 +1,3 @@
+<input #name type="text">
+<button (click)="save(name.value)">Save</button>
+<span *ngIf="(name$ | async ) as nameSaved">{{nameSaved}}</span>
