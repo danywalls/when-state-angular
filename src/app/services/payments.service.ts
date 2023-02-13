@@ -15,7 +15,6 @@ export class PaymentsService {
   }
 
   public addBalance(balance: number) {
-
     this.paymentSubject.next(balance);
   }
 
