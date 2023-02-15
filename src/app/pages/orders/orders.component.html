@@ -1,6 +1,7 @@
 <h2>Add your order</h2>
+<p> your current balance is :{{currentBalance | money }}</p>
 <input #order type="number">
-<button (click)="addOrder(order)">add order</button>
+<button (click)="addOrder(order)" [disabled]="currentBalance <= 0">add order</button>
 <div *ngIf="(orders$ | async ) as orders">
   Your current orders active are:
   <div *ngFor="let order of orders">
