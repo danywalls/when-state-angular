@@ -12,6 +12,8 @@ import { OrdersComponent } from './pages/orders/orders.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { PaymentsService } from './services/payments.service';
 import { OrdersService } from './services/orders.service';
+import { OrderListComponent } from './components/order-list/order-list.component';
+import { CustomerMessageComponent } from './components/customer-message/customer-message.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { OrdersService } from './services/orders.service';
     NavigationComponent,
     PaymentsComponent,
     OrdersComponent,
-    ProfileComponent
+    ProfileComponent,
+    OrderListComponent,
+    CustomerMessageComponent
   ],
   imports: [
     BrowserModule,

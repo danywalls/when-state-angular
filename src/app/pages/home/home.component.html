@@ -1,8 +1,5 @@
-<div *ngIf="customerStatus$ | async as customerStatus">
-  <span>{{ customerStatus.profileName }}</span>
-  <div *ngFor="let order of customerStatus.orders">
-    {{ order }}
-  </div>
-  <span>{{ customerStatus.balance | currency }}</span>
-</div>
-<app-orders></app-orders>
+<app-customer-message></app-customer-message>
+<app-order-list></app-order-list>
+
+
+
