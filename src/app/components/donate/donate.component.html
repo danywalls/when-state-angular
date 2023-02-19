@@ -1,0 +1,5 @@
+<div *ngIf="balance$ | async as balance">
+  Donate
+  <input #order type="number" value="1">
+  <button (click)="donate(order)" [disabled]="balance <= 0">donate</button>
+</div>

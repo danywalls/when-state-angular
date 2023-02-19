@@ -1,6 +1,5 @@
 import {ProfileService} from './../../services/profile.service';
 import {Component} from '@angular/core';
-import {startWith} from 'rxjs/operators';
 
 @Component({
   selector: 'app-profile',
@@ -8,7 +7,7 @@ import {startWith} from 'rxjs/operators';
   styleUrls: ['./profile.component.css'],
 })
 export class ProfileComponent {
-  name$ = this.profileService.name$.pipe(startWith(''));
+  name$ = this.profileService.name$;
 
   constructor(private profileService: ProfileService) {
   }

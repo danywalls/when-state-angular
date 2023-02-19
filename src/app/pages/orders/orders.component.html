@@ -1,10 +1,10 @@
-<div *ngIf="currentBalance | async as balance; else noBalance">
-  <h2>You have {{balance | currency }} as balance, add your orders</h2>
+<div *ngIf="balance$ | async as balance; else noBalance">
+  <app-customer-message></app-customer-message>
   <input #order type="number">
   <button (click)="addOrder(order)" [disabled]="balance <= 0">add order</button>
 </div>
 <ng-template #noBalance>
-  <h2> Insuficient Balance, please add.</h2>
+  <h2> Insufficient Balance, please add.</h2>
 </ng-template>
 
 <app-order-list></app-order-list>

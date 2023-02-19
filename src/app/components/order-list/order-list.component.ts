@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {OrdersService} from "../../services/orders.service";
+import {AppService} from "../../services/app.service";
 
 @Component({
   selector: 'app-order-list',
@@ -8,9 +8,9 @@ import {OrdersService} from "../../services/orders.service";
 })
 export class OrderListComponent {
 
-  orders$ = this.ordersService.orders$;
+  orders$ = this.appService.orders$;
 
-  constructor(private ordersService: OrdersService) {
+  constructor(private appService: AppService) {
   }
 
 }

@@ -1,8 +1,6 @@
 import {Component} from '@angular/core';
-import {ProfileService} from "../../services/profile.service";
-import {PaymentsService} from "../../services/payments.service";
-import {map} from 'rxjs/operators';
-import {combineLatest} from 'rxjs/internal/observable/combineLatest';
+import {AppService} from "../../services/app.service";
+
 
 @Component({
   selector: 'app-customer-message',
@@ -11,16 +9,8 @@ import {combineLatest} from 'rxjs/internal/observable/combineLatest';
 })
 export class CustomerMessageComponent {
 
-  public customerInfo$ = combineLatest([
-    this.paymentService.paymentBalance$,
-    this.profileService.name$,
-  ]).pipe(
-    map(([balance, name]) => ({balance, name}))
-  );
+  public customerInfo$ = this.appService.customerAndBalance$;
 
-  constructor(
-    private profileService: ProfileService,
-    private paymentService: PaymentsService
-  ) {
+  constructor(private appService: AppService) {
   }
 }

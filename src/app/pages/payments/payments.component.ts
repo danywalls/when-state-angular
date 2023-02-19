@@ -1,5 +1,5 @@
-import { PaymentsService } from './../../services/payments.service';
-import { Component, OnInit } from '@angular/core';
+import {PaymentsService} from './../../services/payments.service';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-payments',
@@ -14,7 +14,7 @@ export class PaymentsComponent {
 
   }
 
-  updateBalance(balance: HTMLInputElement) {
+  addBalance(balance: HTMLInputElement) {
     this.paymentService.addBalance(balance.valueAsNumber);
   }
 

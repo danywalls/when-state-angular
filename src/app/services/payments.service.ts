@@ -6,12 +6,15 @@ import {BehaviorSubject} from 'rxjs';
 })
 export class PaymentsService {
 
-  private paymentSubject = new BehaviorSubject<number>(0);
+  private paymentSubject = new BehaviorSubject<number | null>(null);
   public paymentBalance$ = this.paymentSubject.asObservable()
 
   public updateBalance(balance: number) {
-    const totalBalance = this.paymentSubject.getValue() - balance
-    this.paymentSubject.next(totalBalance);
+    const currentBalance = this.paymentSubject.getValue();
+    if (currentBalance) {
+      const totalBalance = currentBalance - balance;
+      this.paymentSubject.next(totalBalance);
+    }
   }
 
   public addBalance(balance: number) {

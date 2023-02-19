@@ -1,6 +1,8 @@
-<div *ngIf="customerInfo$ | async as customer else updateInfo">
-  <p>Hey! {{customer.name}}, your balance is {{ customer.balance | currency }}</p>
+<div *ngIf="customerInfo$ | async as customer">
+  <div *ngIf="customer.name && customer.balance; else updateInfo">
+    <p>Hey! {{customer.name}}, your balance is {{ customer.balance | currency }}</p>
+  </div>
 </div>
 <ng-template #updateInfo>
-  please add name and balance
+  Please add name and balance
 </ng-template>

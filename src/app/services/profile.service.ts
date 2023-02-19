@@ -1,12 +1,12 @@
-import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import {Injectable} from '@angular/core';
+import {BehaviorSubject} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProfileService {
 
-  private nameSubject = new BehaviorSubject<string>('');
+  private nameSubject = new BehaviorSubject<string | null>(null);
   public name$ = this.nameSubject.asObservable()
 
   public saveName(name: string) {

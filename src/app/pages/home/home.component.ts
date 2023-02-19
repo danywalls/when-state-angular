@@ -1,5 +1,4 @@
 import {Component} from '@angular/core';
-import {HomeService} from "./home.service";
 
 @Component({
   selector: 'app-home',
@@ -7,9 +6,5 @@ import {HomeService} from "./home.service";
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent {
-  customerStatus$ = this.homeService.customerInfo$;
-
-  constructor(private homeService: HomeService) {
-  }
-
+  
 }
